@@ -1,4 +1,4 @@
-package yandex_training.first;
+package yandex_training.first.lesson_first;
 
 import java.util.Scanner;
 
