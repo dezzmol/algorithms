@@ -31,13 +31,13 @@ public class TaskH {
 
         int minA = (n + (n - 1) * a);
         int minB = (m + (m - 1) * b);
-        int maxA = (n + (n + 1) * a);
-        int maxB = m + (m + 1) * b;
+        int maxA = minA + 2 * a;
+        int maxB = minB + 2 * b;
 
-        if (Math.abs((minA - minB)) > Math.min(a, b) || Math.abs(maxA - maxB) > Math.min(a, b) * 2) {
+        if (Math.min(maxA, maxB) < Math.max(minA, minB)) {
             System.out.println(-1);
             return;
         }
-        System.out.println(Math.min(minA, minB) + " " + Math.min(maxA, maxB));
+        System.out.println(Math.max(minA, minB) + " " + Math.min(maxA, maxB));
     }
 }
