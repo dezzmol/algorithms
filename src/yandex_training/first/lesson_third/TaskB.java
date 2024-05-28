@@ -24,27 +24,21 @@ public class TaskB {
             second[i] = Integer.parseInt(secondStrings[i]);
         }
 
-        Arrays.sort(first);
-        Arrays.sort(second);
+        Set<Integer> set = new HashSet<>(first.length);
+        for (int i = 0; i < first.length; i++) {
+            set.add(first[i]);
+        }
 
-        int i = 0;
-        int j = 0;
-        Set<Integer> set = new HashSet<>();
-        while (i < first.length && j < second.length) {
-            if (first[i] == second[j]) {
-                set.add(first[i]);
-                i++;
-                j++;
-                continue;
-            }
-            if (first[i] > second[j]) {
-                j++;
-            } else {
-                i++;
+        Set<Integer> result = new HashSet<>();
+        for (int i = 0; i < second.length; i++) {
+            if (set.contains(second[i])) {
+                result.add(second[i]);
             }
         }
-        List<Integer> newSet = set.stream().sorted().collect(Collectors.toList());
-        for (int num : newSet) {
+
+        List<Integer> list = result.stream().sorted().collect(Collectors.toList());
+
+        for (int num : list) {
             System.out.print(num + " ");
         }
     }
