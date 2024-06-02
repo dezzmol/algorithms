@@ -1,55 +1,49 @@
 package yandex_training.training_1.lesson_4;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class TaskF {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int g = scanner.nextInt();
-        int f = scanner.nextInt();
-        scanner.nextLine();
-        char[] w = scanner.nextLine().toCharArray();
-        char[] s = scanner.nextLine().toCharArray();
+        Map<String, Map<String, Integer>> map = new TreeMap<>();
 
-        System.out.println(prefix(w, s));
-
-    }
-
-    private static int prefix(char[] w, char[] s) {
-        Map<Character, Integer> map = new HashMap<>();
-
-        for (char c : w) {
-            if (!map.containsKey(c)) {
-                map.put(c, 0);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            Scanner lineScanner = new Scanner(line);
+            if (!lineScanner.hasNext()) {
+                break;
             }
-            map.put(c, map.get(c) + 1);
-        }
-        int count = 0;
-        for (int i = 0; i < s.length; i++) {
-            int j = i;
-            if (map.containsKey(s[i])) {
-                Map<Character, Integer> tempMap = new HashMap<>(map);
-                while (!tempMap.isEmpty() && j < s.length) {
-                    if (tempMap.get(s[j]) == null) {
-                        break;
-                    }
-                    if (tempMap.get(s[j]) == 1) {
-                        tempMap.remove(s[j]);
-                    } else {
-                        tempMap.put(s[j], tempMap.get(s[j]) - 1);
-                    }
-                    j++;
+
+            String name = lineScanner.next();
+            String item = lineScanner.next();
+            int count = lineScanner.nextInt();
+
+            if (map.containsKey(name)) {
+                Map<String, Integer> innerMap = map.get(name);
+                if (innerMap.containsKey(item)) {
+                    innerMap.put(item, innerMap.get(item) + count);
+                } else {
+                    innerMap.put(item, count);
                 }
-                if (tempMap.isEmpty()) {
-                    count++;
-                }
+            } else {
+                Map<String, Integer> innerMap = new TreeMap<>();
+                innerMap.put(item, count);
+                map.put(name, innerMap);
             }
+
+            lineScanner.close();
         }
 
-        return count;
+        scanner.close();
+
+        map.forEach((k, v) -> {
+            System.out.println(k + ":");
+            v.forEach((innerK, innerV) -> {
+                System.out.println(innerK + " " + innerV);
+            });
+        });
     }
 }
