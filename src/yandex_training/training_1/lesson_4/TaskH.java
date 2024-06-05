@@ -20,6 +20,7 @@ public class TaskH {
 
     private static int prefix(char[] w, char[] s) {
         Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> tempMap = new HashMap<>();
 
         for (char c : w) {
             if (!map.containsKey(c)) {
@@ -27,28 +28,37 @@ public class TaskH {
             }
             map.put(c, map.get(c) + 1);
         }
-        int count = 0;
-        for (int i = 0; i < s.length; i++) {
-            int j = i;
-            if (map.containsKey(s[i])) {
-                Map<Character, Integer> tempMap = new HashMap<>(map);
-                while (!tempMap.isEmpty() && j < s.length) {
-                    if (tempMap.get(s[j]) == null) {
-                        break;
-                    }
-                    if (tempMap.get(s[j]) == 1) {
-                        tempMap.remove(s[j]);
-                    } else {
-                        tempMap.put(s[j], tempMap.get(s[j]) - 1);
-                    }
-                    j++;
-                }
-                if (tempMap.isEmpty()) {
-                    count++;
-                }
+
+        int l = 0;
+        int r = w.length;
+
+        for (int i = 0; i < w.length; i++) {
+            if (!tempMap.containsKey(s[i])) {
+                tempMap.put(s[i], 0);
             }
+            tempMap.put(s[i], tempMap.get(s[i]) + 1);
         }
 
-        return count;
+        int result = 0;
+        while (true) {
+            if (map.equals(tempMap)) {
+                result++;
+            }
+            if (r >= s.length) {
+                break;
+            }
+            tempMap.put(s[l], tempMap.get(s[l]) - 1);
+            if (tempMap.get(s[l]) == 0) {
+                tempMap.remove(s[l]);
+            }
+            l++;
+
+            if (!tempMap.containsKey(s[r])) {
+                tempMap.put(s[r], 0);
+            }
+            tempMap.put(s[r], tempMap.get(s[r]) + 1);
+            r++;
+        }
+        return result;
     }
 }

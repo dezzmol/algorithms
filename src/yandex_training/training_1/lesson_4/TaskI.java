@@ -31,7 +31,11 @@ public class TaskI {
             if (Objects.equals(s, "")) {
                 continue;
             }
-            if (!set.contains(s)) {
+            if (dict.contains(s.toLowerCase())) {
+                if (!set.contains(s)) {
+                    result++;
+                }
+            } else {
                 char[] chars = s.toCharArray();
                 int charUpperCase = 0;
                 for (char c : chars) {
