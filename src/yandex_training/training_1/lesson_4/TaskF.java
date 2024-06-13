@@ -8,7 +8,7 @@ public class TaskF {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Map<String, Map<String, Integer>> map = new TreeMap<>();
+        Map<String, Map<String, Long>> map = new TreeMap<>();
 
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
@@ -19,17 +19,17 @@ public class TaskF {
 
             String name = lineScanner.next();
             String item = lineScanner.next();
-            int count = lineScanner.nextInt();
+            Long count = lineScanner.nextLong();
 
             if (map.containsKey(name)) {
-                Map<String, Integer> innerMap = map.get(name);
+                Map<String, Long> innerMap = map.get(name);
                 if (innerMap.containsKey(item)) {
                     innerMap.put(item, innerMap.get(item) + count);
                 } else {
                     innerMap.put(item, count);
                 }
             } else {
-                Map<String, Integer> innerMap = new TreeMap<>();
+                Map<String, Long> innerMap = new TreeMap<>();
                 innerMap.put(item, count);
                 map.put(name, innerMap);
             }

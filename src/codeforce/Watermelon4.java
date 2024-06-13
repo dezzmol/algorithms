@@ -10,13 +10,9 @@ public class Watermelon4 {
 
         if (w % 2 != 0) {
             System.out.print("NO");
-            return;
-        }
-
-        if ((w / 2) % 2 == 0) {
+        } else {
             System.out.print("YES");
-            return;
         }
-        System.out.print("NO");
+        scanner.close();
     }
 }
