@@ -25,13 +25,10 @@ public class TaskA {
         int br = b[0];
         int i = 0, j = 0;
         while (i < a.length && j < b.length) {
-            int x = a[i] - b[j];
+            int first = a[i];
+            int second = b[j];
+            int x = first - second;
 
-            if (x < minx) {
-                minx = x;
-                ar = a[i];
-                br = b[j];
-            }
             if (x < 0) {
                 x = -x;
                 i++;
@@ -39,9 +36,14 @@ public class TaskA {
                 j++;
             } else {
                 minx = 0;
-                ar = a[i];
-                br = b[j];
+                ar = first;
+                br = second;
                 break;
+            }
+            if (x < minx) {
+                minx = x;
+                ar = first;
+                br = second;
             }
         }
 
