@@ -1,7 +1,5 @@
 package yandex_training.training_1.lesson_5;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class TaskE {
@@ -16,16 +14,21 @@ public class TaskE {
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
-        Map<Integer, Integer> map = new HashMap<>();
+
+        if (arr.length == 1) {
+            System.out.println(1 + " " + 1);
+        }
+
         int l = 0, r = 1;
 
-        while (r - l < k) {
+        while (r < arr.length && l < arr.length) {
             if (arr[l] == arr[r]) {
                 l++;
             }
             r++;
+
         }
 
-        System.out.println(l + " " + r);
+        System.out.println((l + 1) + " " + (r));
     }
 }
