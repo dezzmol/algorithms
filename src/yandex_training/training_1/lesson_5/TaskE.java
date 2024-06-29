@@ -26,9 +26,16 @@ public class TaskE {
                 l++;
             }
             r++;
-
         }
 
-        System.out.println((l + 1) + " " + (r));
+        int i = arr.length - 1, j = arr.length - 2;
+        while (i > 0 && j > 0) {
+            if (arr[i] == arr[j]) {
+                i--;
+            }
+            j--;
+        }
+
+        System.out.println((l + 1) + " " + (Math.min(i + 1, r)));
     }
 }
