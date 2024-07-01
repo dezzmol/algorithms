@@ -10,34 +10,34 @@ public class NearestStop423 {
 
         int n = scanner.nextInt();
         int k = scanner.nextInt();
-        int[] a = new int[n];
+        long[] a = new long[n];
         for (int i = 0; i < n; i++) {
             a[i] = scanner.nextInt();
         }
-        Map<Integer, Integer> map = new HashMap<>(n);
 
         for (int i = 0; i < k; i++) {
             int stop = scanner.nextInt();
-            int result = getNearestStop(a, stop, map);
-            map.put(stop, result);
+            int result = bin(a, stop);
             System.out.println(result);
         }
     }
 
-    private static int getNearestStop(int[] a, int stop, Map<Integer, Integer> map) {
-        if (map.containsKey(stop)) {
-            return map.get(stop);
+    public static String lengthFromBusToStop(int n, int k, long[] a, long[] b) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < k; i++) {
+            int result = bin(a, b[i]);
+            stringBuilder.append(result).append("\n");
         }
+        return stringBuilder.toString();
+    }
 
+    private static int bin(long[] a, long stop) {
         int l = -1;
         int r = a.length;
 
         while (r > l + 1) {
             int m = (l + r) / 2;
-//            if (a[m] == stop) {
-//                return m + 1;
-//            }
-            if (a[m] > stop) {
+            if (a[m] >= stop) {
                 r = m;
             } else {
                 l = m;
