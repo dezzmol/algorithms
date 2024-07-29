@@ -12,7 +12,7 @@ public class TaskE {
 
         long avg = (a * 2 + b * 3 + c * 4) / (a + b + c);
 
-        if (avg >= 4) {
+        if (avg >= 4.75) {
             System.out.println(0);
             return;
         }
