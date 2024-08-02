@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class LargestPositiveIntegerThatExistsWithItsNegative2441 {
+public class L2441_LargestPositiveIntegerThatExistsWithItsNegative {
     public static void main(String[] args) {
         int[] nums = {22,34,2,44,-8,49,-5,22,46,39,-23,-15,27,48,-37,10,22,-45,13,-2};
         System.out.println(findMaxK(nums));

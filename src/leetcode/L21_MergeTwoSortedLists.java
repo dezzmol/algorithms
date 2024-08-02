@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Scanner;
 
-public class MergeTwoSortedLists21 {
+public class L21_MergeTwoSortedLists {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //Solution solution = new Solution();

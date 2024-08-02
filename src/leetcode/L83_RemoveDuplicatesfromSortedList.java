@@ -1,6 +1,6 @@
 package leetcode;
 
-public class RemoveDuplicatesfromSortedList83 {
+public class L83_RemoveDuplicatesfromSortedList {
     public static class ListNode {
         int val;
         ListNode next;

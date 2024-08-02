@@ -1,6 +1,6 @@
 package leetcode;
 
-public class MinimumSizeSubarraySum209 {
+public class L209_MinimumSizeSubarraySum {
     public static int minSubArrayLen(int target, int[] nums) {
         int left = 0, right = 0;
         int sum = 0;

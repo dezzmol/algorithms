@@ -1,6 +1,6 @@
 package leetcode;
 
-public class InsertGreatestCommonDivisorsinLinkedList2807 {
+public class L2807_InsertGreatestCommonDivisorsinLinkedList {
     class ListNode {
         int val;
         ListNode next;

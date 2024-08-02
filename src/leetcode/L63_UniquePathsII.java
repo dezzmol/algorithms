@@ -1,8 +1,6 @@
 package leetcode;
 
-import java.util.Arrays;
-
-public class UniquePathsII63 {
+public class L63_UniquePathsII {
     public static int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
             return 0;

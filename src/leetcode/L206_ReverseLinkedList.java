@@ -2,7 +2,7 @@ package leetcode;
 
 
 
-public class ReverseLinkedList206 {
+public class L206_ReverseLinkedList {
     class ListNode {
         int val;
         ListNode next;

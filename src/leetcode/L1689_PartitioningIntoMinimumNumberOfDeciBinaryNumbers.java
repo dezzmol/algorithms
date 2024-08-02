@@ -1,6 +1,6 @@
 package leetcode;
 
-public class PartitioningIntoMinimumNumberOfDeciBinaryNumbers1689 {
+public class L1689_PartitioningIntoMinimumNumberOfDeciBinaryNumbers {
     public static int minPartitions(String n) {
         int result = 0;
         for (int i = 0; i < n.length(); i++) {

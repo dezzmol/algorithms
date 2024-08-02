@@ -1,6 +1,6 @@
 package leetcode;
 
-public class StringCompression443 {
+public class L443_StringCompression {
     public static int compress(char[] chars) {
         StringBuilder s = new StringBuilder();
 

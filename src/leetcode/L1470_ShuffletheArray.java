@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class ShuffletheArray1470 {
+public class L1470_ShuffletheArray {
     public static int[] shuffle(int[] nums, int n) {
         int first = 0;
         int second = n;

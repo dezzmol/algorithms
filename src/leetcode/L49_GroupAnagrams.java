@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.*;
 
-public class GroupAnagrams49 {
+public class L49_GroupAnagrams {
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> result = new ArrayList<>(strs.length);
         Map<String, List<Integer>> map = new HashMap<>();

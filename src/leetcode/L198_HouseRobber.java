@@ -1,6 +1,6 @@
 package leetcode;
 
-public class HouseRobber198 {
+public class L198_HouseRobber {
     public static int rob(int[] nums) {
         if (nums.length == 0) {
             return 0;

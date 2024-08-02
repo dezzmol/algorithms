@@ -1,6 +1,6 @@
 package leetcode;
 
-public class UniquePaths62 {
+public class L62_UniquePaths {
     public static int uniquePaths(int m, int n) {
         return helper(m, n, new int[m + 1][n + 1]);
     }

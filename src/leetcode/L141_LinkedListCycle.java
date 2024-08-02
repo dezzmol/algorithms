@@ -1,6 +1,6 @@
 package leetcode;
 
-public class LinkedListCycle {
+public class L141_LinkedListCycle {
     class ListNode {
         int val;
         ListNode next;

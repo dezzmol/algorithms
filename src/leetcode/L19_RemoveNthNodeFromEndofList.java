@@ -1,6 +1,6 @@
 package leetcode;
 
-public class RemoveNthNodeFromEndofList19 {
+public class L19_RemoveNthNodeFromEndofList {
     static class ListNode {
         int val;
         ListNode next;

@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Searcha2DMatrixII240 {
+public class L240_Searcha2DMatrixII {
     public static boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
