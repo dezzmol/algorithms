@@ -1,0 +1,32 @@
+package leetcode;
+
+import leetcode.utils.ListNode;
+
+public class L23_MergeKSortedLists {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) {
+            return null;
+        }
+        ListNode listNode = lists[0];
+        for (int i = 1; i < lists.length; i++) {
+            listNode = mergeTwoLists(listNode, lists[i]);
+        }
+        return listNode;
+    }
+
+    private static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                list1.next = mergeTwoLists(list1.next, list2);
+                return list1;
+            } else {
+                list2.next = mergeTwoLists(list1, list2.next);
+                return list2;
+            }
+        }
+        if (list1 == null) {
+            return list2;
+        }
+        return list1;
+    }
+}
